@@ -18,7 +18,8 @@ const techLogos: Record<string, string> = {
   'C++': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg',
   'TypeScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
   'React Native': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
-  'Lua': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg'
+  'Lua': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg',
+  'Python': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg'
 };
 
 const TechIcon = ({ tech }: { tech: string }) => {
