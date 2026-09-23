@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Loader2 } from 'lucide-react';
-import { cn } from '../lib/utils';
 import { useLanguage } from '../lib/LanguageContext';
 import { useAuth } from '../lib/AuthContext';
 import { api } from '../lib/api';

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, MessageSquare, Send } from 'lucide-react';
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
+
 import { useLanguage } from '../lib/LanguageContext';
 import { useAuth } from '../lib/AuthContext';
 import { api } from '../lib/api';

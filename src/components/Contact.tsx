@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail, ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '../lib/LanguageContext';
 

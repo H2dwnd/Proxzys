@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { api } from '../lib/api';
 import { useAuth } from '../lib/AuthContext';
 import { useLanguage } from '../lib/LanguageContext';

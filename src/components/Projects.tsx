@@ -21,7 +21,7 @@ export interface Project {
 
 function ProjectCard({ project, viewText, onClick, onDelete }: { project: Project, viewText: string, onClick: () => void, onDelete?: (e: React.MouseEvent) => void }) {
   const divRef = useRef<HTMLDivElement>(null);
-  const { token, user } = useAuth();
+  const { token } = useAuth();
   const [isFocused, setIsFocused] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
