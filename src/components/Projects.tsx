@@ -188,7 +188,7 @@ export default function Projects() {
       id: 'static-1',
       title: 'English learning app',
       category: 'Mobile App / React Native',
-      description: 'Приложение с уроками для детей для разных языков и т.д.',
+      description: 'Приложение с уроками для детей для разных языков и различные упражение для мозга(дети сейчас деградируют на ютубе).',
       tech: ['React Native'],
       revenueData: [],
       image_url: '/englishlearning.png'
