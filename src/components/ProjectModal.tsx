@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, TrendingUp, MessageSquare, Send } from 'lucide-react';
+import { X, MessageSquare, Send } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 import { useLanguage } from '../lib/LanguageContext';
 import { useAuth } from '../lib/AuthContext';
@@ -60,10 +60,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     }
   };
 
-  const data = project ? project.revenueData.map((val, i) => ({
-    name: t.projectModal.months[i] || `M${i+1}`,
-    revenue: val
-  })) : [];
+  
 
   return (
     <AnimatePresence>
@@ -139,34 +136,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   </div>
                 </div>
 
-                {/* Monetization / Chart */}
-                <div>
-                  <h3 className="text-white/90 font-medium mb-4 flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5 text-[#27C93F]" />
-                    {t.projectModal.monetization}
-                  </h3>
-                  
-                  <div className="w-full h-[200px] bg-white/[0.02] border border-white/5 rounded-2xl p-4">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <AreaChart data={data}>
-                        <defs>
-                          <linearGradient id="colorRev" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#27C93F" stopOpacity={0.3}/>
-                            <stop offset="95%" stopColor="#27C93F" stopOpacity={0}/>
-                          </linearGradient>
-                        </defs>
-                        <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
-                        <XAxis dataKey="name" stroke="rgba(255,255,255,0.3)" fontSize={12} tickLine={false} axisLine={false} />
-                        <YAxis stroke="rgba(255,255,255,0.3)" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(val) => `$${val}`} />
-                        <Tooltip 
-                          contentStyle={{ backgroundColor: '#111', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '12px', color: '#fff' }}
-                          itemStyle={{ color: '#27C93F' }}
-                        />
-                        <Area type="monotone" dataKey="revenue" name={t.projectModal.revenue} stroke="#27C93F" strokeWidth={2} fillOpacity={1} fill="url(#colorRev)" />
-                      </AreaChart>
-                    </ResponsiveContainer>
-                  </div>
-                </div>
 
                 {/* Comments Section */}
                 <div className="pt-6 border-t border-white/10">

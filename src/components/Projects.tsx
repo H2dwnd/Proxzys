@@ -13,7 +13,7 @@ export interface Project {
   title: string;
   category: string;
   description: string;
-  tech: ('C++' | 'Java' | 'JavaScript' | 'TypeScript' | 'React Native' | 'Lua')[];
+  tech: ('C++' | 'Java' | 'JavaScript' | 'TypeScript' | 'React Native' | 'Lua' | 'Python')[];
   revenueData: number[];
   isDynamic?: boolean;
   image_url?: string;
@@ -183,7 +183,28 @@ export default function Projects() {
     }
   };
 
-  const allProjects = dynamicProjects;
+  const staticProjects: Project[] = [
+    {
+      id: 'static-1',
+      title: 'English learning app',
+      category: 'Mobile App / React Native',
+      description: 'Приложение с уроками для детей для разных языков и т.д.',
+      tech: ['React Native'],
+      revenueData: [],
+      image_url: '/englishlearning.png'
+    },
+    {
+      id: 'static-2',
+      title: 'Discord Tracker',
+      category: 'App / JavaScript & Python',
+      description: 'Детектит человека когда он находится в онлайн',
+      tech: ['JavaScript', 'Python'],
+      revenueData: [],
+      image_url: '/photodiscord.png'
+    }
+  ];
+
+  const allProjects = [...staticProjects, ...dynamicProjects];
   
   // Split projects into two columns for masonry effect
   const leftColumn = allProjects.filter((_, i) => i % 2 === 0);
